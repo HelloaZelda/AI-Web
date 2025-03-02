@@ -81,6 +81,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 import './globals.css'
 
-export const metadata = {
-      generator: 'v0.dev'
-    };
+// ✅ 这里导入 metadata，避免 `use client` 报错
+export { metadata } from "./metadata";
