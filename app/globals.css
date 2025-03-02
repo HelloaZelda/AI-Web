@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #342ead;
+  --primary-dark: #6d63ff;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  @apply text-lg;
+}
+
+.glassmorphism {
+  @apply bg-white bg-opacity-20 dark:bg-gray-800 dark:bg-opacity-20 backdrop-blur-lg;
+}
+
+.text-block {
+  @apply relative inline-block px-4 py-2 rounded-lg overflow-hidden;
+}
+
+.text-block::before {
+  content: "";
+  @apply absolute inset-0 opacity-20 transition-opacity duration-300;
+}
+
+.text-block:hover::before {
+  @apply opacity-30;
+}
+
+.language-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+@keyframes particle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  animation: particle 1s ease-out forwards;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #fbdb4a, #f3934a, #eb547d, #9f6aa7, #5476b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textGradient 4s linear infinite;
+}
+
+@keyframes textGradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .glassmorphism {
+  @apply bg-gray-800 bg-opacity-20;
+}
+
+.dark .text-block::before {
+  @apply bg-gray-700;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(45deg, #fbdb4a, #f3934a, #eb547d, #9f6aa7, #5476b3);
+}
+
