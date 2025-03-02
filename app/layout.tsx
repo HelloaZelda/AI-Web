@@ -1,6 +1,6 @@
 "use client"
-import type React from "react"
 
+import type React from "react"
 import { useState, useEffect } from "react"
 import "./globals.css"
 import { Noto_Sans_SC } from "next/font/google"
@@ -16,8 +16,6 @@ import ChatPage from "./chat/page"
 import ContentPage from "./content/page"
 
 const notoSansSC = Noto_Sans_SC({ subsets: ["latin"] })
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState("light");
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false)
   const [activePage, setActivePage] = useState(0)
